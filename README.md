@@ -4,7 +4,26 @@ _basic, pure-frontend implementation of HyPC node interaction_
 
 ## Purpose
 
+Letting you write front-end applications, deployable anywhere (including github pages), that use HyPC nodes to perform work. 
+
+_**Note:** This API assumes the use of MetaMask for crypto payment management. If you're using the `eth` interface, your users will need to use that interface for this to work._
+
+You can see examples of apps using this API at
+
+- [serverless-groq](https://hypercycle-development.github.io/serverless-groq-demo/) ([repo](https://github.com/hypercycle-development/serverless-groq-demo/))
+- [serverless-voiceboard](https://hypercycle-development.github.io/pure-client-voiceboard-demo/) ([repo](https://github.com/hypercycle-development/pure-client-voiceboard-demo))
+
 ## Usage
+
+- Include the JS files from this repo in your HTML. You can either do this by checking the repo out and including them locally, or by hosting them directly from https://hypercycle-development.github.io/hypc-js/
+- In your application, initialize a client by choosing the payment route (currently only `eth` is available), and then calling `init` on the client.
+
+```
+const client = HyPC.eth("https://target.node.address", "Your Application Name");
+client.init().then(_ => client.fetchBalance()).then(console.log);
+```
+
+You can now call your node, and invoke its' AIMs as you please. See the API for a more detailed description of what's possible.
 
 ## API
 
