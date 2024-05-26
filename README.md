@@ -16,6 +16,17 @@ You can see examples of apps using this API at
 ## Usage
 
 - Include the JS files from this repo in your HTML. You can either do this by checking the repo out and including them locally, or by hosting them directly from https://hypercycle-development.github.io/hypc-js/
+
+To host directly, add
+
+```
+<script src="https://hypercycle-development.github.io/hypc-js/metamask-sdk.js"></script>
+<script src="https://hypercycle-development.github.io/hypc-js/web3.min.js"></script>
+<script src="https://hypercycle-development.github.io/hypc-js/hypc.js"></script>
+```
+
+to your `html`.
+
 - In your application, initialize a client by choosing the payment route (currently only `eth` is available), and then calling `init` on the client.
 
 ```
@@ -23,7 +34,7 @@ const client = HyPC.eth("https://target.node.address", "Your Application Name");
 client.init().then(_ => client.fetchBalance()).then(console.log);
 ```
 
-You can now call your node, and invoke its' AIMs as you please. See the API for a more detailed description of what's possible.
+You can now call your node, and invoke its' AIMs as you please. See the API write-up below for a more detailed description of what's possible.
 
 ## API
 
